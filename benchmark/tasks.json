@@ -1,0 +1,47 @@
+{
+  "benchmark": "RegProd-800",
+  "version": "1.0",
+  "description": "Three classification tasks over 800 product descriptions that cross 80 products x 5 registers x 2 paraphrase variants. The tasks are designed to dissociate semantic content (what a description is about) from surface register (how it is written), for probing transformer representations.",
+  "input_field": "text",
+  "tasks": {
+    "register": {
+      "n_classes": 5,
+      "label_field": "register",
+      "labels": ["casual_social", "journalistic", "marketing", "patent", "regulatory"],
+      "question": "Which linguistic register is this description written in?",
+      "notes": "Surface-form task. Trivially solvable from the token distribution alone (probe F1 = 1.0 at the embedding layer). Use as the 'form' axis."
+    },
+    "category": {
+      "n_classes": 8,
+      "label_field": "category",
+      "labels": ["baby_care", "coffee_beverage", "home_cleaning", "oral_care", "pet_food", "skincare", "smart_home", "sports_nutrition"],
+      "question": "Which product category does this description describe?",
+      "notes": "Coarse-content task. Saturates early (probe F1 ~= 0.99 by layer 20). Use as the 'coarse content' axis."
+    },
+    "product": {
+      "n_classes": 80,
+      "label_field": "product_id",
+      "question": "Which specific product (one of 80) does this description describe?",
+      "notes": "Fine-grained content task. 40 real + 40 fictional products, 10 per category (5 real + 5 fictional). The fictional half is a memorization control: any clustering there cannot come from pretraining associations."
+    }
+  },
+  "recommended_protocol": {
+    "representation": "Mean-pool the residual-stream hidden state across non-special token positions (exclude BOS/EOS/PAD) at the layer of interest, giving one 5120-d vector per stimulus per layer.",
+    "dimensionality_reduction": "PCA to 200 components per layer before probe training (used in the reference baselines).",
+    "cross_validation": {
+      "scheme": "5-fold GroupKFold",
+      "group_field": "product_id",
+      "rationale": "Keeps both variants of a product in the same fold to prevent paraphrase leakage. NOTE: for the 80-class product task this makes test classes unseen (zero-shot) -> F1=0 by construction. For a within-product generalization test, use StratifiedKFold over (product_id, variant) instead and report it separately."
+    },
+    "controls": {
+      "label_permutation": "Train one control probe per task on a class-size-preserving random label permutation (Hewitt & Manning 2019); report selectivity = real_F1 - control_F1.",
+      "bag_of_words_ceiling": "Report a TF-IDF + logistic regression baseline; all three tasks hit 100% with BoW, so neural results must be read against that ceiling."
+    }
+  },
+  "rsa_models": {
+    "description": "Theoretical RDMs to correlate (Spearman) against the observed cosine RDM at each layer.",
+    "product_identity": "same-product = 0, same-category = 0.5, different-category = 1.0",
+    "register_identity": "same-register = 0, different-register = 1.0",
+    "within_category": "same-product = 0, different-product-same-category = 1.0, cross-category = NaN (masked)"
+  }
+}
