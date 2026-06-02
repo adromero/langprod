@@ -42,6 +42,15 @@ python reproduce.py     # recompute the RSA curves from fp16 activations, vs bas
 [`benchmark/README.md`](benchmark/README.md) for the full dataset card, schema, task
 protocol, and known caveats (BoW ceiling, GroupKFold zero-shot quirk, anisotropy).
 
+> ⚠️ **Disclaimer.** All 800 descriptions are **AI-generated for research**. The 400
+> real-product items name real brands/companies (e.g. *Colgate Total*, *Pampers Swaddlers*,
+> *Procter & Gamble*), but the text and specs are **fabricated** — not genuine marketing copy,
+> reviews, claims, patents, or filings by those brands, and possibly inaccurate. Trademarks
+> belong to their owners and are used **nominatively for non-commercial research**; no
+> affiliation or endorsement is implied. Rights holders may request removal via a
+> [GitHub issue](https://github.com/adromero/langprod/issues). Full notice in the
+> [dataset card](benchmark/README.md).
+
 ## Repository layout
 
 ```

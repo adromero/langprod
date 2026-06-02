@@ -8,6 +8,17 @@ and is the dataset that experiment was run on.
 
 **Links:** [GitHub repo](https://github.com/adromero/langprod) · [Hugging Face dataset](https://huggingface.co/datasets/adromero/regprod-800)
 
+> ⚠️ **Disclaimer — synthetic data with real brand names.** Every description is
+> **AI-generated for research**. The 400 real-product items name real brands and companies
+> (e.g. *Colgate Total*, *Pampers Swaddlers*, *Procter & Gamble*), but the text — marketing
+> copy, "user reviews," and the "patent"/"regulatory" passages — together with the numeric
+> specifications is **fabricated**. It is **not** real copy, reviews, claims, patents, filings,
+> or statements by those brands and may be factually inaccurate. Brand, product, and company
+> names are trademarks of their respective owners, used **nominatively for non-commercial
+> research only**; no affiliation, sponsorship, or endorsement is implied or intended. The
+> other 400 items use entirely fictional names. Rights holders who would like an item removed
+> can open an issue on the [GitHub repo](https://github.com/adromero/langprod/issues).
+
 The design crosses three factors fully:
 
 ```
@@ -146,12 +157,17 @@ non-special tokens, PCA-200, then 5-fold GroupKFold by `product_id` (see
 
 - **Generation:** all 800 texts were synthetically generated with the Claude CLI (`claude -p`)
   using register-specific prompt templates preserved in `../stimuli.py`. Random seed 42.
-- **Real brand names appear** in the 400 real-product texts (e.g. *Colgate Total*,
-  *Blue Buffalo*). These are third-party trademarks used here for research; **confirm
-  redistribution terms before publishing the dataset publicly.** The 400 fictional-product
-  texts have no such constraint.
-- **License: TBD — not yet set.** The intended default is CC BY 4.0 for the labels/structure,
-  but the real-brand texts above need a redistribution decision first. Set this before release.
+- **Synthetic, not real brand content.** See the disclaimer at the top: the real-product
+  texts are AI-generated and are *not* genuine marketing copy, reviews, claims, patents, or
+  filings by the named brands, and may be inaccurate. Brand/company names (e.g. *Colgate
+  Total*, *Blue Buffalo*, *Procter & Gamble*) are third-party trademarks used nominatively for
+  non-commercial research; no affiliation or endorsement is implied. The 400 fictional-product
+  texts use invented names and carry no such consideration.
+- **Takedown:** rights holders can request removal of any item via a
+  [GitHub issue](https://github.com/adromero/langprod/issues).
+- **License: TBD — not yet set.** The intended default is CC BY 4.0 for the labels/structure;
+  the real-brand texts are governed by the nominative-research-use terms above (`license: other`
+  in the card metadata until finalized).
 
 ## Citation
 
