@@ -21,6 +21,7 @@ within-language register variation; form dominates content end-to-end.
 |---|---|
 | **Read the paper** | [`writeup.pdf`](writeup.pdf) (source: [`writeup.md`](writeup.md)) |
 | **Use the dataset / benchmark** | [**`benchmark/`**](benchmark/) → [`benchmark/README.md`](benchmark/README.md) |
+| **Get the dataset on Hugging Face** | [`adromero/regprod-800`](https://huggingface.co/datasets/adromero/regprod-800) — includes the 496 MB activations bundle |
 | **Reproduce results without a GPU** | [`benchmark/reproduce.py`](benchmark/reproduce.py) (CPU-only, ~80 s) |
 | **Re-run the full pipeline** | [`run.py`](run.py) (needs the model + a ~24 GB GPU) |
 
@@ -81,8 +82,11 @@ python run.py all          # everything, end-to-end
 `data/` is **gitignored** and not shipped. Its largest file is the raw extraction
 `data/Qwen_Qwen2.5-32B-Instruct-GPTQ-Int4_hidden_states.h5` (3.5 GB: mean-pooled
 residual/attention/MLP activations for all 65 layer positions). You don't need it to use
-the benchmark — `benchmark/activations/` ships an fp16 residual-stream subset (~496 MB)
-that reproduces every published result on CPU. To regenerate the full file, run
+the benchmark — an fp16 residual-stream subset (~496 MB) that reproduces every published
+result on CPU is published on the
+[Hugging Face dataset](https://huggingface.co/datasets/adromero/regprod-800). That bundle is
+gitignored here, so a GitHub clone won't include it; download it from HF into
+`benchmark/activations/` to run `reproduce.py`. To regenerate the full file, run
 `python run.py extract` with the model available.
 
 ## Environment

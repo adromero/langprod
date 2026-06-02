@@ -6,6 +6,8 @@ It ships alongside the writeup *"The Protocol Layer Hypothesis: An Experimental 
 Register-Invariant Semantic Representations in Transformer Middle Layers"* (`../writeup.pdf`)
 and is the dataset that experiment was run on.
 
+**Links:** [GitHub repo](https://github.com/adromero/langprod) · [Hugging Face dataset](https://huggingface.co/datasets/adromero/regprod-800)
+
 The design crosses three factors fully:
 
 ```
@@ -59,6 +61,12 @@ category probe (L33, GroupKFold, PCA-200)  macro-F1 0.9924  (baseline 0.9924)  P
 
 fp16 reproduces the float32 RSA to four decimals — cosine-distance geometry is
 insensitive to the downcast.
+
+> **Where to get the bundle:** it lives in this dataset on the
+> [Hugging Face Hub](https://huggingface.co/datasets/adromero/regprod-800)
+> (`activations/hidden_states_residual_fp16.h5`). It is **gitignored in the GitHub repo**
+> (too large for plain git), so if you cloned from GitHub, download it from HF into
+> `benchmark/activations/` before running `reproduce.py`.
 
 > **What the bundle drops vs. the source:** only the residual stream is shipped.
 > The full `../data/…hidden_states.h5` (3.5 GB) additionally holds per-layer
