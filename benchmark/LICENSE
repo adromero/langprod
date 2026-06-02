@@ -1,0 +1,47 @@
+RegProd-800 dataset — License & Notices
+========================================
+
+The RegProd-800 dataset (stimuli.jsonl, tasks.json, baselines.json, the
+activations bundle, and the accompanying writeup writeup.md / writeup.pdf) is
+licensed under:
+
+    Creative Commons Attribution-NonCommercial 4.0 International
+    (CC BY-NC 4.0)
+
+    Legal code:        https://creativecommons.org/licenses/by-nc/4.0/legalcode
+    Human-readable:    https://creativecommons.org/licenses/by-nc/4.0/
+
+You are free to share and adapt the material for NON-COMMERCIAL purposes,
+provided you give appropriate credit. (The source code in this repository is
+licensed separately under the MIT License — see ../LICENSE.)
+
+Attribution
+-----------
+    A. Romero (2026). RegProd-800, from "The Protocol Layer Hypothesis: An
+    Experimental Test of Register-Invariant Semantic Representations in
+    Transformer Middle Layers." https://github.com/adromero/langprod
+
+What the CC BY-NC license does and does not cover
+-------------------------------------------------
+The license applies to the authors' own contributions: the synthetic text,
+the labels/annotations, the baselines, and the selection and arrangement of
+the dataset. It does NOT, and cannot, grant any rights in third-party
+trademarks, trade names, or publicity rights (Creative Commons licenses do not
+license trademark or patent rights).
+
+Synthetic content & trademark notice
+------------------------------------
+All 800 descriptions are AI-GENERATED for research. The 400 real-product items
+reference real brands and companies (e.g. Colgate Total, Pampers Swaddlers,
+Procter & Gamble); the text — marketing copy, "user reviews," and the
+"patent"/"regulatory" passages — and the numeric specifications are FABRICATED.
+They are NOT real copy, reviews, claims, patents, filings, or statements by
+those brands and may be factually inaccurate. All brand, product, and company
+names are the trademarks of their respective owners and are used nominatively
+for non-commercial research only. No affiliation, sponsorship, or endorsement
+is implied or intended. The remaining 400 items use entirely fictional names.
+
+Takedown
+--------
+Rights holders who would like any item removed may open an issue at
+https://github.com/adromero/langprod/issues and it will be addressed promptly.

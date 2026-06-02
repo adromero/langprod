@@ -29,7 +29,7 @@ GITHUB = "https://github.com/adromero/langprod"
 CARD_FRONTMATTER = """\
 ---
 pretty_name: RegProd-800
-license: other
+license: cc-by-nc-4.0
 language:
 - en
 task_categories:
@@ -51,6 +51,7 @@ configs:
 
 # Files shipped to the dataset repo (paths relative to this script's dir).
 FILES = [
+    "LICENSE",
     "stimuli.jsonl",
     "tasks.json",
     "baselines.json",

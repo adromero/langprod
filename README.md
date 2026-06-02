@@ -109,6 +109,20 @@ Built and run on Ubuntu 24.04 (WSL2), Python 3.12, RTX 5090 (32 GB). Extraction 
 GPTQ support (`pip install -e '.[gptq-fallback]'`); the benchmark's `reproduce.py` needs
 only `numpy`/`scipy` (+ `scikit-learn` for the probe) and no GPU.
 
+## License
+
+This repository is dual-licensed by artifact type:
+
+- **Source code** (`run.py`, `*.py`, the benchmark loaders) — **MIT** (see [`LICENSE`](LICENSE)).
+- **The RegProd-800 dataset** (everything under [`benchmark/`](benchmark/)) **and the writeup**
+  (`writeup.md` / `writeup.pdf`) — **CC BY-NC 4.0** (attribution, non-commercial; see
+  [`benchmark/LICENSE`](benchmark/LICENSE)).
+
+The CC license covers the authors' own contributions only. Real brand/company names are
+third-party trademarks of their owners, used nominatively for non-commercial research; the
+synthetic text is AI-generated (see the disclaimer above). Removal requests:
+[open an issue](https://github.com/adromero/langprod/issues).
+
 ## Citation
 
 > A. Romero (2026). *The Protocol Layer Hypothesis: An Experimental Test of

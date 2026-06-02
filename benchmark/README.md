@@ -165,9 +165,11 @@ non-special tokens, PCA-200, then 5-fold GroupKFold by `product_id` (see
   texts use invented names and carry no such consideration.
 - **Takedown:** rights holders can request removal of any item via a
   [GitHub issue](https://github.com/adromero/langprod/issues).
-- **License: TBD — not yet set.** The intended default is CC BY 4.0 for the labels/structure;
-  the real-brand texts are governed by the nominative-research-use terms above (`license: other`
-  in the card metadata until finalized).
+- **License: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)** (attribution,
+  non-commercial) — see [`LICENSE`](LICENSE). The license covers the authors' contributions
+  (synthetic text, labels, baselines, compilation) only; it does not grant rights in the
+  third-party trademarks named above. The source code in the [GitHub repo](https://github.com/adromero/langprod)
+  is licensed separately under MIT.
 
 ## Citation
 
